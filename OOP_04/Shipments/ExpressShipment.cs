@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+#nullable disable
 
 namespace OOP_04.Shipments
 {
@@ -23,6 +24,9 @@ namespace OOP_04.Shipments
         {
             ExtraFee = _ExtraFee;
         }
+
+
+
         #region impelement EstimatedCost abstract method and member
         public override decimal EstimatedCost
         {
@@ -44,6 +48,10 @@ namespace OOP_04.Shipments
             Console.WriteLine($"Destination    : {Destination.GetFullAddress()}");
             Console.WriteLine($"Estimated Cost : {EstimatedCost}");
         }
+        #endregion
+
+        #region impelement EstimatedCost interfaces
+
         #endregion
     }
 }

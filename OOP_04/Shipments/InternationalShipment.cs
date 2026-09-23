@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+#nullable disable
 
 namespace OOP_04.Shipments
 {
@@ -38,6 +39,17 @@ namespace OOP_04.Shipments
             DestinationCountry = destinationCountry;
             CustomsFee = customsFee;
         }
+      
+        public virtual void GenerateCustomsReport()
+        {
+            Console.WriteLine("=== Customs Report ===");
+            Console.WriteLine($"Tracking Code      : {TrackingCode}");
+            Console.WriteLine($"Description        : {Description}");
+            Console.WriteLine($"Weight             : {Weight}");
+            Console.WriteLine($"Destination Country: {DestinationCountry}");
+            Console.WriteLine($"Customs Fee        : {CustomsFee}");
+        }
+
         #region impelement InternationalShipment abstract method and class
         public override decimal EstimatedCost
         {
@@ -58,16 +70,12 @@ namespace OOP_04.Shipments
             Console.WriteLine($"Destination         : {Destination.GetFullAddress()}");
             Console.WriteLine($"Estimated Cost      : {EstimatedCost}");
         }
-#endregion
-        public virtual void GenerateCustomsReport()
-        {
-            Console.WriteLine("=== Customs Report ===");
-            Console.WriteLine($"Tracking Code      : {TrackingCode}");
-            Console.WriteLine($"Description        : {Description}");
-            Console.WriteLine($"Weight             : {Weight}");
-            Console.WriteLine($"Destination Country: {DestinationCountry}");
-            Console.WriteLine($"Customs Fee        : {CustomsFee}");
-        }
+        #endregion
+
+
+        #region impelement InternationalShipment interfaces
+
+        #endregion
 
     }
     public class PriorityInternationalShipment : InternationalShipment
@@ -81,4 +89,5 @@ namespace OOP_04.Shipments
             Console.WriteLine("Priority: EXPRESS CUSTOMS CLEARANCE");
         }
     }
+
 }

@@ -101,6 +101,8 @@ namespace OOP_04.Shipments
         public abstract decimal EstimatedCost { get; }
         #endregion
 
+       
+
     }
 }
 
