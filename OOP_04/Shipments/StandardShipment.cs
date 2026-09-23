@@ -4,7 +4,7 @@ using System.Text;
 #nullable disable
 namespace OOP_04.Shipments
 {
-    public class StandardShipment : Shipment
+    public class StandardShipment : Shipment , ITrackable , IInsurable
     {
    public StandardShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination) : base(trackingCode, description, weight, deliveryFee, destination) { }
 
@@ -28,7 +28,15 @@ namespace OOP_04.Shipments
         #endregion
 
         #region impelement StandardShipment interfaces
+        public string GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} is Ready.";
+        }
 
+        public decimal CalculateInsurance()
+        {
+            return EstimatedCost * 0.05m;
+        }
         #endregion
 
     }

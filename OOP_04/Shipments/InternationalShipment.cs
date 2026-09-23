@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OOP_04.Shipments
 {
-    public class InternationalShipment : Shipment
+    public class InternationalShipment : Shipment, ITrackable, IInsurable
     {
         private string _DestinationCountry;
         private decimal _CustomsFee;
@@ -74,7 +74,16 @@ namespace OOP_04.Shipments
 
 
         #region impelement InternationalShipment interfaces
+        public string GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} has been Delivered.";
 
+        }
+
+        public decimal CalculateInsurance()
+        {
+            return EstimatedCost * 0.12m;
+        }
         #endregion
 
     }

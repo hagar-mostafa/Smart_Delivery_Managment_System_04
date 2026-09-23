@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OOP_04.Shipments
 {
-    public class ExpressShipment : Shipment
+    public class ExpressShipment : Shipment, ITrackable, IInsurable
     {
         private decimal _ExtraFee;
         public decimal ExtraFee
@@ -51,7 +51,15 @@ namespace OOP_04.Shipments
         #endregion
 
         #region impelement EstimatedCost interfaces
+        public string GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} is Out for Delivery.";
+        }
 
+        public decimal CalculateInsurance()
+        {
+            return EstimatedCost * 0.08m;
+        }
         #endregion
     }
 }
