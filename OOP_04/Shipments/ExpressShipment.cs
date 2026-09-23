@@ -50,7 +50,7 @@ namespace OOP_04.Shipments
         }
         #endregion
 
-        #region impelement EstimatedCost interfaces
+       #region impelement EstimatedCost interfaces
         public string GetTrackingStatus()
         {
             return $"Shipment {TrackingCode} is Out for Delivery.";
