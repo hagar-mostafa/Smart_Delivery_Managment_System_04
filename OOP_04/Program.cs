@@ -40,6 +40,8 @@ namespace OOP_04
         2.Yes it can impelement many interfaces
          */
         #endregion
+
+
         static public void Main(string[] args)
         {
 
