@@ -73,7 +73,7 @@ namespace OOP_04.Shipments
         #endregion
 
 
-        #region impelement InternationalShipment interfaces
+       #region impelement InternationalShipment interfaces
         public string GetTrackingStatus()
         {
             return $"Shipment {TrackingCode} has been Delivered.";
