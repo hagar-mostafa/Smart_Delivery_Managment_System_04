@@ -11,9 +11,19 @@ namespace OOP_04.Shipments
         
         public override void PrintShipment()
         {
+            Console.WriteLine("=== Standard Shipment ===");
+            Console.WriteLine($"Tracking Code  : {TrackingCode}");
+            Console.WriteLine($"Description    : {Description}");
+            Console.WriteLine($"Weight         : {Weight}");
+            Console.WriteLine($"Delivery Fee   : {DeliveryFee}");
+            Console.WriteLine($"Destination    : {Destination.GetFullAddress()}");
+            Console.WriteLine($"Estimated Cost : {EstimatedCost}");
+        }
+        public override decimal EstimatedCost
+        {
+            get { return DeliveryFee + (Weight * 5); }
 
         }
-
 
     }
 }

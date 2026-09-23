@@ -98,7 +98,7 @@ namespace OOP_04.Shipments
 
         #region Create Abstract Members
         public abstract void PrintShipment();
-        public abstract decimal EstimatedCost { get; set; }
+        public abstract decimal EstimatedCost { get; }
         #endregion
 
     }
